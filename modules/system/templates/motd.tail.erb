@@ -1,0 +1,9 @@
+
+================================================================================
+<% if @node_description %><%= @node_description %><% end %>
+
+Host: <%= @hostname %> (<%= @fqdn %>, <%= @ipaddress %>).
+System: <%= @kernel %> <%= @lsbdistdescription %> (<%= @architecture %>)
+Timezone: <%= @timezone %>
+================================================================================
+

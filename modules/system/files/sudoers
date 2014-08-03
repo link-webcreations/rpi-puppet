@@ -1,0 +1,55 @@
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@ THIS FILE IS MANAGED BY PUPPET  -- do not edit all changes will be lost !   @
+#@ For more information see git repo 'puppetmaster'                            @
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults	env_reset
+Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Do not pass env vars about VIRTUALENVWRAPPER
+Defaults    env_delete-="VIRTUALENVWRAPPER_*"
+
+# List of hosts
+Host_Alias  SATELLITES = \
+                euedcmon0012, \
+                euedcmon0006, \
+                wweasmon0002, \
+                nandcmon0012
+
+Host_Alias  WORKSTATIONS = \
+                frselwlt8074, \
+                frselwlt8114, \
+                frselwlt8109, \
+                frselwlt8117
+
+# Command aliases
+Cmnd_Alias  GENERAL_ADM = /usr/bin/puppet agent *
+Cmnd_Alias  PACKAGE_ADM = /usr/bin/apt-get update, \
+                          /usr/bin/apt-get upgrade
+Cmnd_Alias  SERVICE_ADM = /usr/sbin/service *
+Cmnd_Alias  NAGIOS_ADM  = /usr/bin/nagios-deploy, /bin/bash
+
+# User privilege specification
+root	    ALL = (ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin      ALL, !WORKSTATIONS = (ALL:ALL) NOPASSWD: ALL
+
+# Allow members of group sudo to execute any command
+%sudo       ALL, !WORKSTATIONS = (ALL:ALL) NOPASSWD: ALL
+
+# Limited access to students
+%student    ALL = (root)    NOPASSWD: GENERAL_ADM, \
+                  (root)    NOPASSWD: SERVICE_ADM, \
+                  (root)    NOPASSWD: PACKAGE_ADM, \
+                  (nagios)  NOPASSWD: NAGIOS_ADM
+
+# Include specific sudoers configurations
+#includedir /etc/sudoers.d

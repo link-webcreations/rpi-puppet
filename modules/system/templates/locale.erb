@@ -1,0 +1,7 @@
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@ THIS FILE IS MANAGED BY PUPPET  -- do not edit all changes will be lost !   @
+#@ For more information see git repo 'puppetmaster'                            @
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+LANG="<% if @node_language %><%= @node_language %><% else %>en_US<% end %>.utf8"
+LANGUAGE="<% if @node_language %><%= @node_language %><% else %>en_US<% end %>.utf8:<% if @node_language %><%= @node_language %><% else %>en_US<% end %>"

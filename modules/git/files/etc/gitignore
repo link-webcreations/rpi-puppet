@@ -1,0 +1,8 @@
+.directory
+.idea/
+*.pyc
+pkg-build/
+docs/build/
+~*
+*.swp
+.ropeproject/
