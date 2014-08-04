@@ -12,7 +12,8 @@ Exec {
 # Nodes
 #===============================================================================
 
-$node_language = "fr_FR"
+$node_language    = "fr_FR"
+$node_description = "Yves' Pi"
 
 include account
 include git
