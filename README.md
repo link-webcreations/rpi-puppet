@@ -2,6 +2,14 @@
 
 **NOTE** All the credit is for [bigbrozer](https://github.com/bigbrozer)
 
+
+## Include
+
+* A RSS Reader, [Miniflux](http://miniflux.net/).It's minimalist and open source.
+* A way to monitor your pi with [RPi-Monitor](http://rpi-experiences.blogspot.fr/).
+* A nice and colored prompt using [Liquid prompt](https://github.com/nojhan/liquidprompt)
+* And lot more
+
 ## Prerequisites
 
 Having a raspberry pi woring and connected to the WAN
