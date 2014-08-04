@@ -1,0 +1,2 @@
+# Update all feeds in 60 minutes (updates the 8 oldest feeds each time with a total of 120 feeds).
+* */1 * * *  root ( cd /usr/share/miniflux && php cronjob.php --database=db.sqlite >/dev/null 2>&1 )

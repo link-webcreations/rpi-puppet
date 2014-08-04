@@ -23,4 +23,13 @@ class rss::install {
     target  => "miniflux",
     source  => "rss/apache2/miniflux.conf",
   }
+
+  # Setup cron job
+  file { '/etc/cron.d/miniflux':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    source  => 'puppet:///modules/rss/cron/miniflux',
+    require => Exec['Clone miniflux repository'],
+  }
 }
