@@ -1,5 +1,3 @@
-# Class that install redmine.
-#
 class rss::install {
   # Defaults
   Exec {

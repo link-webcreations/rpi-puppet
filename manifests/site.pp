@@ -17,6 +17,7 @@ $node_description = "Yves' Pi"
 
 include account
 include git
+include kanboard
 include monitor
 include rss
 include system
