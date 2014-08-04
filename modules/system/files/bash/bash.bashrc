@@ -61,7 +61,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias rpi-temp='LD_LIBRARY_PATH=/opt/vc/lib && /opt/vc/bin/vcgencmd measure_temp'
+alias rpi-temp="awk '{print $1/1000,"°C"}' /sys/class/thermal/thermal_zone0/temp"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
