@@ -61,7 +61,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias rpi-temp="awk '{print $1/1000,"°C"}' /sys/class/thermal/thermal_zone0/temp"
+alias rpi-temp='echo "scale=1; $(cat /sys/class/thermal/thermal_zone0/temp)/1000" | bc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
