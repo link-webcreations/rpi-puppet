@@ -1,8 +1,8 @@
 class system::motd {
-  file { '/etc/motd.tail':
+  file { '/etc/motd':
     owner   => 'root',
     group   => 'root',
     mode    => 644,
-    content => template('system/motd.tail.erb'),
+    content => template('system/motd.erb'),
   }
 }
