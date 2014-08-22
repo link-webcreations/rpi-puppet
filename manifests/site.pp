@@ -16,6 +16,7 @@ $node_language    = "fr_FR"
 $node_description = "Yves' Pi"
 
 include account
+include aria2
 include git
 include kanboard
 include monitor

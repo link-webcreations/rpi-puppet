@@ -8,6 +8,7 @@
 * A RSS Reader, [Miniflux](http://miniflux.net/).It's minimalist and open source.
 * A way to monitor your pi with [RPi-Monitor](http://rpi-experiences.blogspot.fr/).
 * A nice and colored prompt using [Liquid prompt](https://github.com/nojhan/liquidprompt)
+* aria2
 * And lot more
 
 ## Prerequisites
