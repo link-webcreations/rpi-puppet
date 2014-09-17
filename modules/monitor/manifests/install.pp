@@ -14,7 +14,7 @@ class monitor::install {
   exec {'rpimonitor_update':
     user        => 'root',
     group       => 'root',
-    command     => 'apt-get update && service rpimonitor update',
+    command     => 'apt-get update && /usr/share/rpimonitor/scripts/updatePackagesStatus.sh',
     refreshonly => true,
   }
 
@@ -24,20 +24,20 @@ class monitor::install {
     target  => "rpimonitor",
     source  => "monitor/apache2/rpimonitor.conf",
   }
-  file { '/etc/rpimonitord.conf':
+  file { '/etc/rpimonitor/daemon.conf':
     ensure => present,
     mode   => 0644,
     owner  => 'root',
     group  => 'root',
-    source => 'puppet:///modules/monitor/etc/rpimonitord.conf',
+    source => 'puppet:///modules/monitor/etc/daemon.conf',
     notify => Service['rpimonitor'],
   }
-  file { '/etc/rpimonitord.conf.d/livestorage.conf':
+  file { '/etc/rpimonitor/livestorage.conf':
     ensure => present,
     mode   => 0644,
     owner  => 'root',
     group  => 'root',
-    source => 'puppet:///modules/monitor/etc/rpimonitord.conf.d/livestorage.conf',
+    source => 'puppet:///modules/monitor/etc/livestorage.conf',
     notify => Service['rpimonitor'],
   }
 }
