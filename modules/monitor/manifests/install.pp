@@ -24,6 +24,12 @@ class monitor::install {
     target  => "rpimonitor",
     source  => "monitor/apache2/rpimonitor.conf",
   }
+  file { '/etc/rpimonitor':
+    ensure => directory,
+    mode   => 0644,
+    owner  => 'root',
+    group  => 'root',
+  }
   file { '/etc/rpimonitor/daemon.conf':
     ensure => present,
     mode   => 0644,
