@@ -14,7 +14,7 @@ class monitor::install {
   exec {'rpimonitor_update':
     user        => 'root',
     group       => 'root',
-    command     => 'apt-get update && /usr/share/rpimonitor/scripts/updatePackagesStatus.sh',
+    command     => 'apt-get update && /usr/share/rpimonitor/scripts/updatePackagesStatus.pl',
     refreshonly => true,
   }
 
