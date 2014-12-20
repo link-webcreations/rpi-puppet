@@ -42,7 +42,7 @@ Step 2, build dep and get sources:
     
 Step 3, intall requirements:
 
-    sudo apt-get install virt-what ruby-json
+    sudo apt-get install virt-what ruby-json pciutils
     sudo dpkg -i facter_*.deb hiera_*.deb ruby-rgen_*.deb
     
 Step4, install puppet:
