@@ -27,6 +27,10 @@ package { "cifs-utils":
   ensure  => present,
 }
 
+file { "/media/livestorage":
+    ensure => "directory",
+}
+
 mount { '/media/livestorage':
   device  => '//192.168.1.1/usb1',
   atboot  => 'true',
